@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher #spring boot版本2.6.0一下不需要此配置，以上会出现版本不兼容，则需要加入此配置
+  application:
+    name: mall-test
+  datasource:
+    url: jdbc:mysql://localhost:3306/mymall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: npdeworid
+    password: xiaotaishuai0.0
+mybatis-plus:
+  type-aliases-package: com.npdeworid.mymall.mbg.model
+  config-location:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
